@@ -6,7 +6,7 @@ import numpy as np
 import seaborn as sns
 from matplotlib import pyplot as plt
 from keras.utils.np_utils import to_categorical # convert to one-hot-encoding
-
+from sklearn.model_selection import train_test_split
 
 np.random.seed(2)
 
@@ -23,9 +23,7 @@ def normalizacao(data):
 
 
 def create_train_data():
-    """
-    :return: X_train, Y_train
-    """
+
     print('running create_train_data() ')
     train = pd.read_csv(os.getcwd()+"/MNIST/data/input/train.csv")
 
@@ -60,7 +58,13 @@ def create_train_data():
     g = plt.imshow(X_train[1][:,:,0])
     plt.show()
 
-    return X_train, Y_train
+    # Set the random seed
+    random_seed = 2
+
+    # divide os dados de treino e validacao para setar no treinamento
+    X_train, X_val, Y_train, Y_val = train_test_split(X_train, Y_train, test_size=0.1, random_state=random_seed)
+
+    return X_train, X_val, Y_train, Y_val
 
 
 def create_teste_data():
