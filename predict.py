@@ -27,7 +27,7 @@ def load_model_network():
     # compute the confusion matrix
     confusion_mtx = confusion_matrix(Y_true, Y_pred_classes)
 
-    print(" ACURÀCIA = %.2f " %(accuracy_score(Y_true, Y_pred_classes)*100))
+    print(" ACURÀCIA = %.2f" %(accuracy_score(Y_true, Y_pred_classes)*100), "%")
 
     # plot the confusion matrix
     plot_confusion_matrix(confusion_mtx, classes=range(10))
