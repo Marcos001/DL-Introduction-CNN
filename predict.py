@@ -5,6 +5,8 @@ from data import load_test_data
 from train import CNN
 import numpy as np
 from MNIST.functions import plot_confusion_matrix
+from util import main_validacao
+from sklearn.metrics import accuracy_score
 
 def load_model_network():
 
@@ -25,8 +27,13 @@ def load_model_network():
     # compute the confusion matrix
     confusion_mtx = confusion_matrix(Y_true, Y_pred_classes)
 
+    print(" ACURÀCIA = %.2f " %(accuracy_score(Y_true, Y_pred_classes)*100))
+
     # plot the confusion matrix
     plot_confusion_matrix(confusion_mtx, classes=range(10))
+
+
+
 
 
 
