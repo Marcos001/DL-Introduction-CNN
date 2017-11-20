@@ -5,7 +5,7 @@ from keras.optimizers import RMSprop
 from keras.preprocessing.image import ImageDataGenerator
 from matplotlib import pyplot as plt
 
-from data import create_train_data
+from data import load_train_data, load_test_data
 
 def CNN(weights_path=None):
 
@@ -55,7 +55,8 @@ if __name__ == '__main__':
     batch_size = 86
 
     # ontendo os dados de treino e teste
-    X_train, X_val, Y_train, Y_val = create_train_data()
+    X_train, Y_train  = load_train_data()
+    X_val, Y_val = load_test_data()
 
 
     datagen = ImageDataGenerator(

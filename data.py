@@ -64,23 +64,22 @@ def create_train_data():
     # divide os dados de treino e validacao para setar no treinamento
     X_train, X_test, Y_train, Y_test = train_test_split(X_train, Y_train, test_size=0.1, random_state=random_seed)
 
-    np.save(os.getcwd() + '/data_npy/X_train.npy', X_train)
-    np.save(os.getcwd() + '/data_npy/X_test.npy', X_test)
-    np.save(os.getcwd() + '/data_npy/Y_train.npy', Y_train)
-    np.save(os.getcwd() + '/data_npy/Y_test.npy', Y_test)
+    np.save('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/X_train.npy', X_train)
+    np.save('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/X_test.npy', X_test)
+    np.save('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/Y_train.npy', Y_train)
+    np.save('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/Y_test.npy', Y_test)
 
-    return X_train, X_test, Y_train, Y_test
 
 
 
 def load_train_data():
-    X_train = np.load(os.getcwd() + '/data_npy/X_train.npy')
-    Y_train = np.load(os.getcwd() + '/data_npy/Y_train.npy')
+    X_train = np.load('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/X_train.npy')
+    Y_train = np.load('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/Y_train.npy')
     return X_train, Y_train
 
 def load_test_data():
-    X_test = np.load(os.getcwd() + '/data_npy/X_test.npy')
-    Y_test = np.load(os.getcwd() + '/data_npy/Y_test.npy')
+    X_test = np.load('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/X_test.npy')
+    Y_test = np.load('/home/nig/PycharmProjects/DL-Introduction-CNN/MNIST/data/npy/Y_test.npy')
     return X_test, Y_test
 
 if __name__ == '__main__':
