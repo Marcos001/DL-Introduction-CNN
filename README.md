@@ -27,3 +27,7 @@ understanding of how convolutional neural networks work with images are not triv
     month   = "nov"</br>
 }</br>
   </p>
+  
+  <h4>
+  <a href="https://github.com/Marcos001/DL-Introduction-CNN/blob/master/capitulo_DEEP_LEARNING.pdf">Capítulo Deep Learning PDF.</a>
+  </h4>
